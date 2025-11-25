@@ -10,6 +10,7 @@ export default function ConditionalNavbar() {
     // '/dashboard',
     // '/cleantech/dashboard',
     // '/climate-finance/dashboard',
+    '/corporate'
   ];
 
   const shouldShowNavbar = showNavbarRoutes.some(route =>
