@@ -17,7 +17,7 @@ export default function MainLandingPage() {
       id: 'corporate',
       title: 'Corporate & Industry',
       subtitle: 'Ploxi Earth',
-      description: 'ESG analytics, sustainability reporting, and compliance solutions for corporations',
+      // description: 'ESG analytics, sustainability reporting, and compliance solutions for corporations',
       icon: Building2,
       features: [
         'ESG Dashboard',
@@ -33,7 +33,7 @@ export default function MainLandingPage() {
       id: 'cleantech',
       title: 'Clean Tech',
       subtitle: 'Vendors & Solutions',
-      description: 'Technology vendors, innovation showcase, and solution matching for clean technology',
+      // description: 'Technology vendors, innovation showcase, and solution matching for clean technology',
       icon: Zap,
       features: [
         'Technology Vendors',
@@ -49,7 +49,7 @@ export default function MainLandingPage() {
       id: 'climate-finance',
       title: 'Climate Finance',
       subtitle: 'Investment & Funding',
-      description: 'Climate finance solutions, carbon credits, and sustainable investment opportunities',
+      // description: 'Climate finance solutions, carbon credits, and sustainable investment opportunities',
       icon: TrendingUp,
       features: [
         'Carbon Credits',
@@ -78,7 +78,7 @@ export default function MainLandingPage() {
               priority
             />
             <div>
-              <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">Ploxi</h1>
+              <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center">Ploxi</h1>
               <p className="text-md sm:text-lg text-green-600 font-medium">
                 Empowering Sustainable Business Growth
               </p>
@@ -141,7 +141,7 @@ export default function MainLandingPage() {
                       href={service.href}
                       className={`inline-flex items-center justify-center w-full px-5 sm:px-6 py-3 sm:py-4 bg-gradient-to-r ${service.gradient} text-white rounded-xl font-semibold text-sm sm:text-lg transition-all duration-300 transform group-hover:scale-105 ${service.hoverGradient} shadow-md hover:shadow-lg`}
                     >
-                      Explore {service.title}
+                      Explore Ploxi Earth
                       <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </div>
