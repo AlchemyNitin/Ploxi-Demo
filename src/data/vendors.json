@@ -1,5 +1,60 @@
 {
   "vendors": [
+    {
+      "id": "fluxgen",
+      "name": "FluxGen Sustainable Technologies",
+      "type": "Water",
+      "description": "FluxGen is a Bengaluru-based startup that leverages AI and IoT to provide end-to-end water management solutions for industries and commercial facilities. Their core product, AquaGen, helps enterprises monitor water usage in real-time, identify leaks, and reduce wastage by up to 30%, assisting organizations in becoming water-positive.",
+      "solutions": ["aquagen water intelligence platform", "iot realtime monitoring", "ai predictive analytics", "leakage and wastage detection", "groundwater and esg compliance"],
+      "targetIndustries": ["manufacturing", "food_and_beverage", "pharma", "healthcare", "textiles", "metals_and_mining"],
+      "targetRegions": ["IN", "SA", "AE", "AF"],
+      "contact": { "email": "contact@fluxgen.com", "phone": "+91 73560 08082" },
+      "website": "https://fluxgen.com"
+    },
+    {
+      "id": "neo_san",
+      "name": "Neo San",
+      "type": "Waste",
+      "description": "Neo San is a Bengaluru-based startup specializing in decentralised, 100% electric incineration technology that eliminates reject waste at the source. Their patented 'Unified Core' sustains clean combustion at 1200°C with 98% cleaner emissions than industry standards.",
+      "solutions": ["decentralised_incineration_systems","iot_enabled_waste_monitoring","sanitation_as_a_service","data_driven_esg_reporting","carbon_offset_generation"],
+      "targetIndustries": ["healthcare_facilities","bulk_waste_generators","municipal_bodies","educational_institutes","corporate_offices","aviation"],
+      "targetRegions": ["IN"],
+      "contact": {"email": "dhwaj@neosanitation.net","phone": "+91 91482 97040"},
+      "website": "https://www.neosan.in"
+    },
+    {
+      "id": "biodegradable_future",
+      "name": "Biodegradable Future",
+      "type": "Environmental Technology",
+      "description": "Biodegradable Future is a global distributor of patented organic additives that enable conventional plastics to biodegrade in landfills, oceans, and soil. Their technology changes the molecular structure of plastic to attract microbes, facilitating biodegradation into methane and nutrient-rich soil (humus).",
+      "solutions": ["organic_biodegradable_additives", "anaerobic_biodegradation_technology", "quorum_sensing_microbial_attraction", "methane_capture_energy_solutions", "sustainability_marketing_leverage"],
+      "targetIndustries": ["packaging", "cosmetics", "automotive", "beverages", "petrochemical", "agriculture"],
+      "targetRegions": ["Global", "USA", "IN", "EU", "BR", "ZA", "DE"],
+      "contact": { "email": "info@biodegradablefuture.com", "phone": "" },
+      "website": "https://www.biodegradablefuture.com"
+    },
+    {
+      "id": "ampacity_energy",
+      "name": "Ampacity Energy Private Limited",
+      "type": "Renewable Energy",
+      "description": "A leading provider of solar power solutions in India that offers a comprehensive range of services from evaluation and design to installation and maintenance. As an EPC company, it specializes in engineering, procurement, and commissioning of solar power systems for businesses, government agencies, and residential homeowners.",
+      "solutions": ["epc_engineering_procurement_commissioning","solar_installation_work","solar_panel_maintenance","evaluation_and_design","financing_options"],
+      "targetIndustries": ["commercial_businesses","government_agencies","residential","smes"],
+      "targetRegions": ["IN"],
+      "contact": {"email": "admin@ampacityenergy.com","phone": "+91 9739605005"},
+      "website": "https://www.ampacityenergy.com"
+    },
+    {
+      "id": "dexler_energy",
+      "name": "Dexler Energy",
+      "type": "Renewable Energy",
+      "description": "Specializes in modular solar parks and turnkey solar solutions for SMEs and mid-sized industries Offers end-to-end services including land acquisition, approvals, and rapid project execution for captive consumption.",
+      "solutions": ["modular solar parks", "rooftop solar", "turnkey epc", "captive energy generation"],
+      "targetIndustries": ["textiles", "steel", "fmcg", "it_ites", "dairy", "auto"],
+      "targetRegions": ["IN", "AE", "EU", "US"],
+      "contact": { "email": "marketing@dexlerenergy.com", "phone": "+91-9071312013" },
+      "website": "https://www.dexlerenergy.com"
+    },
     
     {
       "id": "biofuture_additives",
