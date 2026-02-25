@@ -1,11 +1,14 @@
-
 {
   "regions": {
     "india": {
       "name": "India",
       "code": "IN",
       "flag": "🇮🇳",
-      "primaryFrameworks": ["BRSR", "Companies Act 2013", "SEBI Guidelines"],
+      "primaryFrameworks": [
+        "BRSR",
+        "Companies Act 2013",
+        "SEBI Guidelines"
+      ],
       "categories": {
         "environmental": {
           "name": "Environmental Compliance",
@@ -42,6 +45,26 @@
               "status": "not-started",
               "authority": "State Pollution Control Board",
               "category": "Auditing"
+            },
+            {
+              "id": "griha_net_zero",
+              "title": "GRIHA Net Zero Certification",
+              "description": "Achieve GRIHA Net Zero certification by demonstrating zero net energy consumption through renewable energy generation equal to or greater than annual energy consumption",
+              "priority": "high",
+              "deadline": "2025-12-31",
+              "status": "not-started",
+              "authority": "Green Rating for Integrated Habitat Assessment (GRIHA) Council",
+              "category": "Certification"
+            },
+            {
+              "id": "gnn_net_zero",
+              "title": "Global Network for Net Zero (GNN) Alignment",
+              "description": "Align organisational net zero strategy with the Global Network for Net Zero framework and submit baseline emissions inventory",
+              "priority": "medium",
+              "deadline": "2025-09-30",
+              "status": "not-started",
+              "authority": "Global Network for Net Zero (GNN)",
+              "category": "Reporting"
             }
           ]
         },
@@ -150,6 +173,22 @@
           "description": "Listing obligations including ESG disclosures for listed companies",
           "applicability": "All listed companies",
           "lastAmendment": "2024-10-01"
+        },
+        {
+          "id": "griha_net_zero_reg",
+          "title": "GRIHA Net Zero Standard",
+          "authority": "GRIHA Council / Ministry of New & Renewable Energy",
+          "description": "National green building rating standard for net zero energy buildings with mandatory disclosure of renewable energy generation and energy performance",
+          "applicability": "Commercial, institutional, and residential buildings seeking net zero certification",
+          "lastAmendment": "2024-07-01"
+        },
+        {
+          "id": "global_network_net_zero",
+          "title": "Global Network for Net Zero (GNN) Framework",
+          "authority": "Global Network for Net Zero",
+          "description": "International framework for corporate net zero commitments, requiring science-based targets, annual progress reporting, and third-party verification of net zero claims",
+          "applicability": "All corporations with net zero commitments",
+          "lastAmendment": "2024-11-01"
         }
       ]
     },
@@ -157,7 +196,11 @@
       "name": "United States",
       "code": "US",
       "flag": "🇺🇸",
-      "primaryFrameworks": ["SASB", "SEC Climate Disclosure", "EPA Requirements"],
+      "primaryFrameworks": [
+        "SASB",
+        "SEC Climate Disclosure",
+        "EPA Requirements"
+      ],
       "categories": {
         "environmental": {
           "name": "Environmental Compliance",
@@ -251,7 +294,11 @@
       "name": "European Union",
       "code": "EU",
       "flag": "🇪🇺",
-      "primaryFrameworks": ["ESRS", "CSRD", "EU Taxonomy"],
+      "primaryFrameworks": [
+        "ESRS",
+        "CSRD",
+        "EU Taxonomy"
+      ],
       "categories": {
         "environmental": {
           "name": "Environmental Compliance",
@@ -309,7 +356,10 @@
       "name": "United Arab Emirates",
       "code": "AE",
       "flag": "🇦🇪",
-      "primaryFrameworks": ["UAE ESG Guidelines", "ADX ESG Requirements"],
+      "primaryFrameworks": [
+        "UAE ESG Guidelines",
+        "ADX ESG Requirements"
+      ],
       "categories": {
         "environmental": {
           "name": "Environmental Compliance",

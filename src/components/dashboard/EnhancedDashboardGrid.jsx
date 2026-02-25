@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { 
-  BarChart3, 
-  FileText, 
-  RefreshCw, 
-  TrendingDown, 
-  Store, 
+import {
+  BarChart3,
+  FileText,
+  RefreshCw,
+  TrendingDown,
+  Store,
   Filter,
   Download,
   AlertTriangle
@@ -32,7 +32,7 @@ import {
 import MetricCard from './MetricCard';
 import { generateSampleMetrics } from '@/utils/generateSampleMetrics';
 
-const EnhancedDashboardGrid = ({ 
+const EnhancedDashboardGrid = ({
   selectedFramework = null,
   selectedIndustry = null,
   className = ""
@@ -98,12 +98,12 @@ const EnhancedDashboardGrid = ({
   const generateMetrics = async () => {
     setIsLoading(true);
     await new Promise(resolve => setTimeout(resolve, 800));
-    
+
     const newMetrics = generateSampleMetrics(
-      selectedIndustry?.id || 'manufacturing', 
+      selectedIndustry?.id || 'manufacturing',
       selectedFramework?.id || 'gri'
     );
-    
+
     setMetrics(newMetrics);
     setLastGenerated(new Date());
     setIsLoading(false);
@@ -119,13 +119,13 @@ const EnhancedDashboardGrid = ({
       'Social': 'Consulting',
       'Governance': 'Analytics'
     };
-    
+
     const solutionType = categoryToSolutionMap[metricCategory] || 'Energy';
-    router.push(`/marketplace?filter=${solutionType.toLowerCase()}`);
+    router.push(`/corporate/marketplace?filter=${solutionType.toLowerCase()}`);
   };
 
   const handleExploreAllSolutions = () => {
-    router.push('/marketplace?clear=true');
+    router.push('/corporate/marketplace');
   };
 
   const handleGenerateReport = () => {
@@ -187,7 +187,7 @@ const EnhancedDashboardGrid = ({
                 )}
               </div>
             </div>
-            
+
             <div className="flex flex-wrap items-center gap-3">
               {selectedFramework.id === 'brsr' && (
                 <button
@@ -198,7 +198,7 @@ const EnhancedDashboardGrid = ({
                   <span>GENERATE REPORT</span>
                 </button>
               )}
-              
+
               <button
                 onClick={handleExploreAllSolutions}
                 className="inline-flex items-center space-x-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium"
@@ -206,7 +206,7 @@ const EnhancedDashboardGrid = ({
                 <Store className="w-4 h-4" />
                 <span>Explore Solutions</span>
               </button>
-              
+
               <button
                 onClick={generateMetrics}
                 disabled={isLoading}
@@ -243,35 +243,35 @@ const EnhancedDashboardGrid = ({
                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
                 <XAxis dataKey="month" stroke="#666" fontSize={12} />
                 <YAxis stroke="#666" fontSize={12} />
-                <Tooltip 
-                  contentStyle={{ 
-                    backgroundColor: 'white', 
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: 'white',
                     border: '1px solid #e5e7eb',
                     borderRadius: '8px',
                     fontSize: '12px'
                   }}
                 />
                 <Legend />
-                <Line 
-                  type="monotone" 
-                  dataKey="consumption" 
-                  stroke={chartColors.primary} 
+                <Line
+                  type="monotone"
+                  dataKey="consumption"
+                  stroke={chartColors.primary}
                   strokeWidth={2}
                   name="Consumption (L/day)"
                   dot={{ fill: chartColors.primary, strokeWidth: 2, r: 4 }}
                 />
-                <Line 
-                  type="monotone" 
-                  dataKey="recycled" 
-                  stroke={chartColors.success} 
+                <Line
+                  type="monotone"
+                  dataKey="recycled"
+                  stroke={chartColors.success}
                   strokeWidth={2}
                   name="Recycled Water (L/day)"
                   dot={{ fill: chartColors.success, strokeWidth: 2, r: 4 }}
                 />
-                <Line 
-                  type="monotone" 
-                  dataKey="target" 
-                  stroke={chartColors.warning} 
+                <Line
+                  type="monotone"
+                  dataKey="target"
+                  stroke={chartColors.warning}
                   strokeWidth={2}
                   strokeDasharray="5 5"
                   name="Target (L/day)"
@@ -301,38 +301,38 @@ const EnhancedDashboardGrid = ({
                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
                 <XAxis dataKey="year" stroke="#666" fontSize={12} />
                 <YAxis stroke="#666" fontSize={12} />
-                <Tooltip 
-                  contentStyle={{ 
-                    backgroundColor: 'white', 
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: 'white',
                     border: '1px solid #e5e7eb',
                     borderRadius: '8px',
                     fontSize: '12px'
                   }}
                 />
                 <Legend />
-                <Area 
-                  type="monotone" 
-                  dataKey="scope3" 
+                <Area
+                  type="monotone"
+                  dataKey="scope3"
                   stackId="1"
-                  stroke={chartColors.danger} 
+                  stroke={chartColors.danger}
                   fill={chartColors.danger}
                   fillOpacity={0.7}
                   name="Scope 3 (tons CO₂e)"
                 />
-                <Area 
-                  type="monotone" 
-                  dataKey="scope2" 
+                <Area
+                  type="monotone"
+                  dataKey="scope2"
                   stackId="1"
-                  stroke={chartColors.warning} 
+                  stroke={chartColors.warning}
                   fill={chartColors.warning}
                   fillOpacity={0.7}
                   name="Scope 2 (tons CO₂e)"
                 />
-                <Area 
-                  type="monotone" 
-                  dataKey="scope1" 
+                <Area
+                  type="monotone"
+                  dataKey="scope1"
                   stackId="1"
-                  stroke={chartColors.primary} 
+                  stroke={chartColors.primary}
                   fill={chartColors.primary}
                   fillOpacity={0.7}
                   name="Scope 1 (tons CO₂e)"
@@ -367,9 +367,9 @@ const EnhancedDashboardGrid = ({
                     <Cell key={`cell-${index}`} fill={entry.fill} />
                   ))}
                 </Pie>
-                <Tooltip 
-                  contentStyle={{ 
-                    backgroundColor: 'white', 
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: 'white',
                     border: '1px solid #e5e7eb',
                     borderRadius: '8px',
                     fontSize: '12px'
@@ -389,25 +389,25 @@ const EnhancedDashboardGrid = ({
               <div className="text-2xl font-bold text-blue-600">78%</div>
             </div>
             <ResponsiveContainer width="100%" height={300}>
-              <RadialBarChart 
-                cx="50%" 
-                cy="50%" 
-                innerRadius="40%" 
-                outerRadius="90%" 
+              <RadialBarChart
+                cx="50%"
+                cy="50%"
+                innerRadius="40%"
+                outerRadius="90%"
                 data={[{ name: 'Efficiency', value: 78, fill: chartColors.secondary }]}
                 startAngle={180}
                 endAngle={0}
               >
-                <RadialBar 
-                  dataKey="value" 
-                  cornerRadius={10} 
+                <RadialBar
+                  dataKey="value"
+                  cornerRadius={10}
                   fill={chartColors.secondary}
                 />
-                <text 
-                  x="50%" 
-                  y="50%" 
-                  textAnchor="middle" 
-                  dominantBaseline="middle" 
+                <text
+                  x="50%"
+                  y="50%"
+                  textAnchor="middle"
+                  dominantBaseline="middle"
                   className="text-3xl font-bold fill-current text-blue-600"
                 >
                   78%
@@ -440,7 +440,7 @@ const EnhancedDashboardGrid = ({
                     </p>
                   </div>
                 </div>
-                
+
                 <button
                   onClick={() => handleReduceThis(category)}
                   className="inline-flex items-center space-x-2 px-4 py-2 bg-red-50 text-red-700 rounded-lg hover:bg-red-100 transition-colors font-medium"
@@ -453,8 +453,8 @@ const EnhancedDashboardGrid = ({
               {/* Category Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {groupedMetrics[category].map(metric => (
-                  <MetricCard 
-                    key={metric.id} 
+                  <MetricCard
+                    key={metric.id}
                     metric={metric}
                     onReduceThis={() => handleReduceThis(category)}
                     className="animate-fade-in hover:shadow-lg transition-all duration-200"
@@ -474,7 +474,7 @@ const EnhancedDashboardGrid = ({
             No Sustainability Metrics Available
           </h3>
           <p className="text-gray-600 max-w-md mx-auto mb-6">
-            {!selectedFramework || !selectedIndustry 
+            {!selectedFramework || !selectedIndustry
               ? "Please select both a framework and industry to view relevant metrics."
               : "No metrics found for this selection."
             }

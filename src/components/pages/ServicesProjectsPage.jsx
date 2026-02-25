@@ -611,7 +611,7 @@ const ProjectManagementPage = () => {
         <div className="bg-white rounded-2xl p-2 shadow-sm border border-gray-200 flex gap-2">
           {[
             { id: 'projects', label: 'Projects', icon: Briefcase, desc: 'Timelines, Gantt, milestones' },
-            { id: 'cart', label: 'Cart', icon: ShoppingCart, desc: 'Selected services & products' }
+            { id: 'cart', label: 'Bid Manager', icon: ShoppingCart, desc: 'Manage bids & selected services' }
           ].map(tab => {
             const Icon = tab.icon;
             return (

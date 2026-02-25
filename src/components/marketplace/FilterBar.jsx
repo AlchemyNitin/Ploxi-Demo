@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Filter, X, ChevronDown } from 'lucide-react';
 
-const FilterBar = ({ 
+const FilterBar = ({
   onFiltersChange,
   availableIndustries = [],
   initialFilters = {},
@@ -20,9 +20,9 @@ const FilterBar = ({
     { id: 'Waste', label: 'Waste', color: 'bg-orange-100 text-orange-700 border-orange-200' },
     { id: 'Analytics', label: 'Analytics', color: 'bg-purple-100 text-purple-700 border-purple-200' },
     { id: 'Consulting', label: 'Consulting', color: 'bg-gray-100 text-gray-700 border-gray-200' },
-    { id: 'Compliance', label: 'Compliance as a Service', color: 'bg-indigo-100 text-indigo-700 border-indigo-200' },
-    { id: 'NBS', label: 'Nature-Based Solutions', color: 'bg-emerald-100 text-emerald-700 border-emerald-200' },
+    { id: 'Compliance', label: 'Compliance', color: 'bg-indigo-100 text-indigo-700 border-indigo-200' },
     { id: 'Carbon Credits', label: 'Carbon Credits', color: 'bg-yellow-100 text-yellow-700 border-yellow-200' },
+    { id: 'IRECs', label: 'IRECs / RECs', color: 'bg-emerald-100 text-emerald-700 border-emerald-200' },
     { id: 'Certificates', label: 'Certificates', color: 'bg-pink-100 text-pink-700 border-pink-200' }
   ];
 
@@ -58,8 +58,8 @@ const FilterBar = ({
   };
 
   const handleTypeToggle = (typeId) => {
-    setSelectedTypes(prev => 
-      prev.includes(typeId) 
+    setSelectedTypes(prev =>
+      prev.includes(typeId)
         ? prev.filter(id => id !== typeId)
         : [...prev, typeId]
     );
@@ -89,7 +89,7 @@ const FilterBar = ({
             Filter Solutions
           </h2>
         </div>
-        
+
         {hasActiveFilters && (
           <button
             onClick={clearAllFilters}
@@ -136,8 +136,8 @@ const FilterBar = ({
                   className={`
                     inline-flex items-center px-4 py-2 rounded-full text-sm font-medium
                     border transition-all duration-200 ease-in-out
-                    ${isSelected 
-                      ? `${type.color} border-current shadow-sm` 
+                    ${isSelected
+                      ? `${type.color} border-current shadow-sm`
                       : 'bg-white text-gray-600 border-gray-300 hover:bg-gray-50'
                     }
                   `}
@@ -168,7 +168,7 @@ const FilterBar = ({
                 `}
               >
                 <span>
-                  {selectedIndustry 
+                  {selectedIndustry
                     ? availableIndustries.find(ind => ind.id === selectedIndustry)?.name || selectedIndustry
                     : 'Select Industry'
                   }
@@ -257,8 +257,8 @@ const FilterBar = ({
 
       {/* Click outside to close dropdown */}
       {showIndustryDropdown && (
-        <div 
-          className="fixed inset-0 z-0" 
+        <div
+          className="fixed inset-0 z-0"
           onClick={() => setShowIndustryDropdown(false)}
           aria-hidden="true"
         />

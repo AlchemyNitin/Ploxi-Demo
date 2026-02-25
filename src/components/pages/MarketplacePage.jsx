@@ -289,7 +289,7 @@ const MarketplacePage = () => {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           {[
             { icon: Building2, label: 'Vendors', count: enhancedVendors.length, color: 'text-blue-600' },
-            { icon: Leaf, label: 'NBS Solutions', count: enhancedVendors.filter(v => v.type === 'NBS').length, color: 'text-green-600' },
+            { icon: Leaf, label: 'IRECs / RECs', count: enhancedVendors.filter(v => v.type === 'IRECs' || v.type === 'RECs' || v.type === 'Energy').length, color: 'text-green-600' },
             { icon: Shield, label: 'Compliance', count: enhancedVendors.filter(v => v.type === 'Compliance').length, color: 'text-purple-600' },
             { icon: TrendingUp, label: 'Carbon Credits', count: enhancedVendors.filter(v => v.type === 'Carbon Credits').length, color: 'text-orange-600' },
             { icon: Award, label: 'Certifications', count: enhancedVendors.filter(v => v.type === 'Certificates').length, color: 'text-indigo-600' }
