@@ -3,9 +3,9 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { 
-  Building2, 
-  Zap, 
+import {
+  Building2,
+  Zap,
   TrendingUp,
   CheckCircle,
   ArrowRight
@@ -21,7 +21,7 @@ export default function MainLandingPage() {
       icon: Building2,
       features: [
         'ESG Dashboard',
-        'Sustainability Reporting', 
+        'Sustainability Reporting',
         'Compliance Management',
         'Vendor Marketplace'
       ],
@@ -38,7 +38,7 @@ export default function MainLandingPage() {
       features: [
         'Technology Vendors',
         'Innovation Showcase',
-        'Solution Matching', 
+        'Solution Matching',
         'Partnership Opportunities'
       ],
       href: '/cleantech',
@@ -70,7 +70,7 @@ export default function MainLandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
           <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left">
             <Image
-              src="https://i.postimg.cc/QM8fvftG/IMG-20250819-WA0002.jpg"
+              src="/images/ploxi earth logo.jpeg"
               alt="Ploxi"
               width={64}
               height={64}
@@ -158,8 +158,8 @@ export default function MainLandingPage() {
           <div className="text-center">
             <div className="flex flex-col sm:flex-row items-center justify-center mb-6">
               <Image
-                src="https://i.postimg.cc/QM8fvftG/IMG-20250819-WA0002.jpg"
-                alt="Ploxi"
+                src="/images/ploxi earth logo.jpeg"
+                alt="Ploxi Earth"
                 width={32}
                 height={32}
                 className="h-8 w-8 object-contain rounded mb-3 sm:mb-0 sm:mr-3"

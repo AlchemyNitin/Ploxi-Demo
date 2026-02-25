@@ -66,7 +66,7 @@ export default function CorporateLandingPage() {
           </Link>
           <div className="flex flex-col sm:flex-row items-center sm:space-x-3 sm:pl-4 sm:border-l border-gray-300">
             <Image
-              src="https://i.postimg.cc/QM8fvftG/IMG-20250819-WA0002.jpg"
+              src="/images/ploxi earth logo.jpeg"
               alt="Ploxi Earth"
               width={48}
               height={48}
@@ -226,7 +226,7 @@ export default function CorporateLandingPage() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
         <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start space-x-0 sm:space-x-3 mb-3 md:mb-0">
           <Image
-            src="https://i.postimg.cc/QM8fvftG/IMG-20250819-WA0002.jpg"
+            src="/images/ploxi earth logo.jpeg"
             alt="Ploxi Earth"
             width={32}
             height={32}

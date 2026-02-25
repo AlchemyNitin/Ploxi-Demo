@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,35 +11,15 @@ import {
   Shield,
   Menu,
   X,
-  ShoppingCart,
+  Briefcase,
+  FileText,
 } from 'lucide-react';
-import { useCart } from '@/contexts/CartContext';
-
-// 🛒 Cart Badge Component
-const CartBadge = () => {
-  const { totalItems } = useCart();
-
-  return (
-    <Link
-      href="/services"
-      className="relative inline-flex items-center p-2 text-gray-600 hover:text-green-600 transition-colors"
-    >
-      <ShoppingCart className="w-5 h-5" />
-      {totalItems > 0 && (
-        <span className="absolute -top-1 -right-1 w-5 h-5 bg-green-600 text-white text-xs rounded-full flex items-center justify-center font-medium">
-          {totalItems > 99 ? '99+' : totalItems}
-        </span>
-      )}
-    </Link>
-  );
-};
 
 const Navbar = () => {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { totalItems } = useCart();
 
-  // ✅ Updated dashboard URL logic for corporate path
+  // ✅ Preserve the full dashboard URL if already on a dashboard route
   const dashboardUrl = pathname.startsWith('/corporate/dashboard/')
     ? pathname
     : '/corporate/dashboard';
@@ -70,10 +50,16 @@ const Navbar = () => {
       description: 'Regulatory tracking',
     },
     {
-      name: 'Services/Projects',
+      name: 'Project Management',
       href: '/corporate/services',
-      icon: ShoppingCart,
-      description: 'Cart and project management',
+      icon: Briefcase,
+      description: 'Projects and services',
+    },
+    {
+      name: 'RFP',
+      href: '/corporate/rfp',
+      icon: FileText,
+      description: 'Request for Proposal',
     },
   ];
 
@@ -94,8 +80,8 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 flex-shrink-0">
             <Image
-              src="https://i.postimg.cc/QM8fvftG/IMG-20250819-WA0002.jpg"
-              alt="Ploxi Consult"
+              src="/images/ploxi earth logo.jpeg"
+              alt="Ploxi Earth"
               width={40}
               height={40}
               className="h-10 w-10 object-contain rounded-md"
@@ -118,22 +104,14 @@ const Navbar = () => {
                   `}
                 >
                   <Icon
-                    className={`w-4 h-4 ${
-                      active ? 'text-green-600' : 'text-gray-500 group-hover:text-green-600'
-                    }`}
+                    className={`w-4 h-4 ${active ? 'text-green-600' : 'text-gray-500 group-hover:text-green-600'
+                      }`}
                   />
                   <span>{item.name}</span>
 
-                  {/* Cart Badge for Services/Projects */}
-                  {item.href === '/corporate/services' && totalItems > 0 && (
-                    <span className="w-4 h-4 bg-green-600 text-white text-xs rounded-full flex items-center justify-center font-medium">
-                      {totalItems > 9 ? '9+' : totalItems}
-                    </span>
-                  )}
-
                   {/* Active Indicator */}
                   {active && (
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-green-600 rounded-full"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-green-600 rounded-full" />
                   )}
                 </Link>
               );
@@ -142,7 +120,6 @@ const Navbar = () => {
 
           {/* Right Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <CartBadge />
             <Link
               href="/corporate/register"
               className="px-4 py-2 text-sm font-medium text-green-600 hover:text-green-700 transition-colors"
@@ -176,10 +153,9 @@ const Navbar = () => {
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`flex items-center space-x-3 px-4 py-3 rounded-lg font-medium transition-all duration-200
-                      ${
-                        active
-                          ? 'text-green-700 bg-[#e9f1ea] border-l-4 border-green-600'
-                          : 'text-gray-700 hover:text-green-700 hover:bg-gray-50'
+                      ${active
+                        ? 'text-green-700 bg-[#e9f1ea] border-l-4 border-green-600'
+                        : 'text-gray-700 hover:text-green-700 hover:bg-gray-50'
                       }
                     `}
                   >
@@ -187,14 +163,7 @@ const Navbar = () => {
                       className={`w-5 h-5 ${active ? 'text-green-600' : 'text-gray-500'}`}
                     />
                     <div className="flex-1">
-                      <div className="flex items-center justify-between">
-                        <span className="font-medium">{item.name}</span>
-                        {item.href === '/corporate/services' && totalItems > 0 && (
-                          <span className="w-5 h-5 bg-green-600 text-white text-xs rounded-full flex items-center justify-center font-medium">
-                            {totalItems > 99 ? '99+' : totalItems}
-                          </span>
-                        )}
-                      </div>
+                      <div className="font-medium">{item.name}</div>
                       <div className="text-xs text-gray-500 mt-0.5">{item.description}</div>
                     </div>
                   </Link>

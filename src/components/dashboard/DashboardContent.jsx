@@ -4,10 +4,10 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { 
-  ArrowLeft, 
-  Settings, 
-  Home, 
+import {
+  ArrowLeft,
+  Settings,
+  Home,
   BarChart3,
   Building2,
   MapPin,
@@ -26,7 +26,7 @@ import industriesData from '@/data/industries.json';
 const DashboardContent = ({ config, params }) => {
   const router = useRouter();
   const { location, industry, framework, vendors } = config;
-  
+
   const [metrics, setMetrics] = useState([]);
   const [filteredVendors, setFilteredVendors] = useState([]);
   const [loading, setLoading] = useState({
@@ -43,10 +43,10 @@ const DashboardContent = ({ config, params }) => {
     const generateMetrics = async () => {
       try {
         setLoading(prev => ({ ...prev, metrics: true }));
-        
+
         // Simulate API delay
         await new Promise(resolve => setTimeout(resolve, 1000));
-        
+
         const generatedMetrics = generateSampleMetrics(industry.id, framework.id);
         setMetrics(generatedMetrics);
         setLoading(prev => ({ ...prev, metrics: false }));
@@ -64,17 +64,17 @@ const DashboardContent = ({ config, params }) => {
     const filterVendors = async () => {
       try {
         setLoading(prev => ({ ...prev, vendors: true }));
-        
+
         // Simulate API delay
         await new Promise(resolve => setTimeout(resolve, 800));
-        
+
         let filtered = vendors;
 
         // Filter by location
         if (location) {
-          filtered = filtered.filter(vendor => 
-            !vendor.targetRegions || 
-            vendor.targetRegions.length === 0 || 
+          filtered = filtered.filter(vendor =>
+            !vendor.targetRegions ||
+            vendor.targetRegions.length === 0 ||
             vendor.targetRegions.includes(location.code)
           );
         }
@@ -82,7 +82,7 @@ const DashboardContent = ({ config, params }) => {
         // Filter by industry
         if (industry) {
           filtered = filtered.filter(vendor =>
-            !vendor.targetIndustries || 
+            !vendor.targetIndustries ||
             vendor.targetIndustries.length === 0 ||
             vendor.targetIndustries.includes(industry.id)
           );
@@ -114,8 +114,8 @@ const DashboardContent = ({ config, params }) => {
             {/* Left: Logo and Title */}
             <div className="flex items-center space-x-4">
               <img
-                src="https://i.postimg.cc/QM8fvftG/IMG-20250819-WA0002.jpg"
-                alt="Ploxi Consults"
+                src="/images/ploxi earth logo.jpeg"
+                alt="Ploxi Earth"
                 className="h-10 w-10 object-contain rounded-md"
               />
               <div>
@@ -137,8 +137,8 @@ const DashboardContent = ({ config, params }) => {
                 <Settings className="w-4 h-4" />
                 <span>Edit Configuration</span>
               </button>
-              
-              <Link 
+
+              <Link
                 href="/"
                 className="inline-flex items-center space-x-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
               >
@@ -154,8 +154,8 @@ const DashboardContent = ({ config, params }) => {
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <nav className="flex items-center space-x-2 text-sm">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="text-gray-500 hover:text-gray-700 transition-colors"
             >
               Home
@@ -172,7 +172,7 @@ const DashboardContent = ({ config, params }) => {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
+
         {/* Configuration Summary */}
         <section className="mb-12">
           <div className="bg-white rounded-2xl p-6 shadow-soft border border-gray-200">
@@ -185,7 +185,7 @@ const DashboardContent = ({ config, params }) => {
                   <div className="text-sm text-blue-700">Geographic Location</div>
                 </div>
               </div>
-              
+
               <div className="flex items-center space-x-3 p-4 bg-purple-50 rounded-lg">
                 <Building2 className="w-5 h-5 text-purple-600" />
                 <div>
@@ -193,7 +193,7 @@ const DashboardContent = ({ config, params }) => {
                   <div className="text-sm text-purple-700">Industry Sector</div>
                 </div>
               </div>
-              
+
               <div className="flex items-center space-x-3 p-4 bg-green-50 rounded-lg">
                 <FileText className="w-5 h-5 text-green-600" />
                 <div>
@@ -355,8 +355,8 @@ const DashboardContent = ({ config, params }) => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-3">
               <img
-                src="https://i.postimg.cc/QM8fvftG/IMG-20250819-WA0002.jpg"
-                alt="Ploxi Consults"
+                src="/images/ploxi earth logo.jpeg"
+                alt="Ploxi Earth"
                 className="h-8 w-8 object-contain rounded"
               />
               <span className="text-gray-600">

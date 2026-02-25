@@ -2,12 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { 
-  Store, 
-  ShoppingCart, 
-  Leaf, 
-  Award, 
-  Shield, 
+import {
+  Store,
+  ShoppingCart,
+  Leaf,
+  Award,
+  Shield,
   TrendingUp,
   Building2,
   Search as SearchIcon
@@ -220,35 +220,35 @@ const MarketplacePage = () => {
   ];
 
   const tabs = [
-    { 
-      id: 'solutions', 
-      name: 'Solution Providers', 
-      icon: Store, 
+    {
+      id: 'solutions',
+      name: 'Solution Providers',
+      icon: Store,
       count: enhancedVendors.length,
-      description: 'Sustainability solution vendors and service providers' 
+      description: 'Sustainability solution vendors and service providers'
     },
-    { 
-      id: 'procurement', 
-      name: 'Purchasing/Procurement', 
-      icon: ShoppingCart, 
+    {
+      id: 'procurement',
+      name: 'Purchasing/Procurement',
+      icon: ShoppingCart,
       count: procurementItems.length,
-      description: 'Products and services available for procurement' 
+      description: 'Products and services available for procurement'
     }
   ];
 
   // Handle URL parameters for filters (like "REDUCE THIS" from dashboard)
   useEffect(() => {
     if (!searchParams) return; // Guard against missing searchParams
-    
+
     const filter = searchParams.get('filter');
     const clear = searchParams.get('clear');
-    
+
     if (clear === 'true') {
       setInitialFilters({});
     } else if (filter) {
       const filterMap = {
         'energy': 'Energy',
-        'water': 'Water', 
+        'water': 'Water',
         'waste': 'Waste',
         'analytics': 'Analytics',
         'consulting': 'Consulting',
@@ -257,7 +257,7 @@ const MarketplacePage = () => {
         'carbon-credits': 'Carbon Credits',
         'certificates': 'Certificates'
       };
-      
+
       const mappedFilter = filterMap[filter.toLowerCase()];
       if (mappedFilter) {
         setInitialFilters({ types: [mappedFilter] });
@@ -268,96 +268,98 @@ const MarketplacePage = () => {
   const handleTabChange = (tabId) => {
     setActiveTab(tabId);
     // Clear URL parameters when switching tabs
-    router.replace('/marketplace', { shallow: true });
+    router.replace('/corporate/marketplace', { shallow: true });
   };
 
   return (
-    <div className="space-y-8">
-      {/* Header */}
-      <div className="text-center p-10">
-        <h1 className="text-3xl font-bold text-white mb-4">
-          Sustainability Marketplace
-        </h1>
-        <p className="text-white-600 max-w-3xl mx-auto">
-          Discover verified solution providers, procurement options, and services for your sustainability journey. 
-          From compliance management to nature-based solutions, find everything you need in one place.
-        </p>
-      </div>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="space-y-8">
+        {/* Header */}
+        <div className="text-center p-10">
+          <h1 className="text-3xl font-bold text-white mb-4">
+            Sustainability Marketplace
+          </h1>
+          <p className="text-gray-200 max-w-3xl mx-auto">
+            Discover verified solution providers, procurement options, and services for your sustainability journey.
+            From compliance management to nature-based solutions, find everything you need in one place.
+          </p>
+        </div>
 
-      {/* Enhanced Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-        {[
-          { icon: Building2, label: 'Vendors', count: enhancedVendors.length, color: 'text-blue-600' },
-          { icon: Leaf, label: 'NBS Solutions', count: enhancedVendors.filter(v => v.type === 'NBS').length, color: 'text-green-600' },
-          { icon: Shield, label: 'Compliance', count: enhancedVendors.filter(v => v.type === 'Compliance').length, color: 'text-purple-600' },
-          { icon: TrendingUp, label: 'Carbon Credits', count: enhancedVendors.filter(v => v.type === 'Carbon Credits').length, color: 'text-orange-600' },
-          { icon: Award, label: 'Certifications', count: enhancedVendors.filter(v => v.type === 'Certificates').length, color: 'text-indigo-600' }
-        ].map((stat, index) => {
-          const Icon = stat.icon;
-          return (
-            <div key={index} className="bg-white rounded-xl p-4 text-center border border-gray-200 shadow-sm">
-              <Icon className={`w-6 h-6 ${stat.color} mx-auto mb-2`} />
-              <div className="text-2xl font-bold text-gray-900">{stat.count}</div>
-              <div className="text-sm text-gray-600">{stat.label}</div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Tab Navigation */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-200">
-        <div className="flex border-b border-gray-200">
-          {tabs.map((tab) => {
-            const Icon = tab.icon;
+        {/* Enhanced Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          {[
+            { icon: Building2, label: 'Vendors', count: enhancedVendors.length, color: 'text-blue-600' },
+            { icon: Leaf, label: 'NBS Solutions', count: enhancedVendors.filter(v => v.type === 'NBS').length, color: 'text-green-600' },
+            { icon: Shield, label: 'Compliance', count: enhancedVendors.filter(v => v.type === 'Compliance').length, color: 'text-purple-600' },
+            { icon: TrendingUp, label: 'Carbon Credits', count: enhancedVendors.filter(v => v.type === 'Carbon Credits').length, color: 'text-orange-600' },
+            { icon: Award, label: 'Certifications', count: enhancedVendors.filter(v => v.type === 'Certificates').length, color: 'text-indigo-600' }
+          ].map((stat, index) => {
+            const Icon = stat.icon;
             return (
-              <button
-                key={tab.id}
-                onClick={() => handleTabChange(tab.id)}
-                className={`
-                  flex-1 flex items-center justify-center space-x-3 px-6 py-4 font-medium transition-all duration-200
-                  ${activeTab === tab.id
-                    ? 'bg-[#e9f1ea] text-green-700 border-b-2 border-green-600'
-                    : 'text-gray-600 hover:text-green-700 hover:bg-green-50'
-                  }
-                `}
-              >
-                <Icon className="w-5 h-5" />
-                <div className="text-left">
-                  <div className="font-semibold">{tab.name}</div>
-                  <div className="text-xs opacity-75">{tab.count} items • {tab.description}</div>
-                </div>
-              </button>
+              <div key={index} className="bg-white rounded-xl p-4 text-center border border-gray-200 shadow-sm">
+                <Icon className={`w-6 h-6 ${stat.color} mx-auto mb-2`} />
+                <div className="text-2xl font-bold text-gray-900">{stat.count}</div>
+                <div className="text-sm text-gray-600">{stat.label}</div>
+              </div>
             );
           })}
         </div>
 
-        {/* Tab Content */}
-        <div className="p-6">
-          {activeTab === 'solutions' && (
-            <MarketplaceGrid
-              vendors={enhancedVendors}
-              initialFilters={initialFilters}
-              availableIndustries={[
-                { id: 'manufacturing', name: 'Manufacturing' },
-                { id: 'finance', name: 'Finance' },
-                { id: 'healthcare', name: 'Healthcare' },
-                { id: 'education', name: 'Education' },
-                { id: 'real_estate', name: 'Real Estate' },
-                { id: 'logistics', name: 'Logistics' },
-                { id: 'automotive', name: 'Automotive' },
-                { id: 'steel', name: 'Steel' },
-                { id: 'cement', name: 'Cement' },
-                { id: 'it_datacenter', name: 'IT / Data Center' }
-              ]}
-            />
-          )}
+        {/* Tab Navigation */}
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-200">
+          <div className="flex border-b border-gray-200">
+            {tabs.map((tab) => {
+              const Icon = tab.icon;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => handleTabChange(tab.id)}
+                  className={`
+                  flex-1 flex items-center justify-center space-x-3 px-6 py-4 font-medium transition-all duration-200
+                  ${activeTab === tab.id
+                      ? 'bg-[#e9f1ea] text-green-700 border-b-2 border-green-600'
+                      : 'text-gray-600 hover:text-green-700 hover:bg-green-50'
+                    }
+                `}
+                >
+                  <Icon className="w-5 h-5" />
+                  <div className="text-left">
+                    <div className="font-semibold">{tab.name}</div>
+                    <div className="text-xs opacity-75">{tab.count} items • {tab.description}</div>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
 
-          {activeTab === 'procurement' && (
-            <ProcurementGrid
-              items={procurementItems}
-              vendors={enhancedVendors}
-            />
-          )}
+          {/* Tab Content */}
+          <div className="p-6">
+            {activeTab === 'solutions' && (
+              <MarketplaceGrid
+                vendors={enhancedVendors}
+                initialFilters={initialFilters}
+                availableIndustries={[
+                  { id: 'manufacturing', name: 'Manufacturing' },
+                  { id: 'finance', name: 'Finance' },
+                  { id: 'healthcare', name: 'Healthcare' },
+                  { id: 'education', name: 'Education' },
+                  { id: 'real_estate', name: 'Real Estate' },
+                  { id: 'logistics', name: 'Logistics' },
+                  { id: 'automotive', name: 'Automotive' },
+                  { id: 'steel', name: 'Steel' },
+                  { id: 'cement', name: 'Cement' },
+                  { id: 'it_datacenter', name: 'IT / Data Center' }
+                ]}
+              />
+            )}
+
+            {activeTab === 'procurement' && (
+              <ProcurementGrid
+                items={procurementItems}
+                vendors={enhancedVendors}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>

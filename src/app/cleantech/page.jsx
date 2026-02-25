@@ -89,7 +89,7 @@ export default function CleanTechLandingPage() {
           </Link>
           <Link href="/" className="flex items-center space-x-3 group">
             <Image
-              src="https://i.postimg.cc/QM8fvftG/IMG-20250819-WA0002.jpg"
+              src="/images/ploxi earth logo.jpeg"
               alt="Ploxi"
               width={48}
               height={48}
@@ -111,7 +111,7 @@ export default function CleanTechLandingPage() {
           </Link>
           <div className="flex items-center space-x-3 sm:pl-4 sm:border-l border-gray-300">
             <Image
-              src="https://i.postimg.cc/QM8fvftG/IMG-20250819-WA0002.jpg"
+              src="/images/ploxi earth logo.jpeg"
               alt="Ploxi Earth"
               width={48}
               height={48}
@@ -221,7 +221,7 @@ export default function CleanTechLandingPage() {
         <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6">
           <div className="flex items-center justify-center md:justify-start space-x-3">
             <Image
-              src="https://i.postimg.cc/QM8fvftG/IMG-20250819-WA0002.jpg"
+              src="/images/ploxi earth logo.jpeg"
               alt="Ploxi"
               width={32}
               height={32}

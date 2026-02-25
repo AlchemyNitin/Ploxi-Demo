@@ -455,7 +455,7 @@ const handleResendOTP = async () => {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-0">
           <div className="flex items-center space-x-3 sm:space-x-4">
             <Image
-              src="https://i.postimg.cc/QM8fvftG/IMG-20250819-WA0002.jpg"
+              src="/images/ploxi earth logo.jpeg"
               alt="Ploxi"
               width={48}
               height={48}

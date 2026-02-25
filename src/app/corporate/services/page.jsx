@@ -2,8 +2,8 @@
 import ServicesProjectsPage from '@/components/pages/ServicesProjectsPage';
 
 export const metadata = {
-  title: 'Services & Projects Cart | Ploxi Sustainability Platform',
-  description: 'Review and manage your selected sustainability services, compliance actions, and projects.',
+  title: 'Project Management | Ploxi Sustainability Platform',
+  description: 'Track and manage sustainability projects, timelines, milestones, and vendor engagements.',
 };
 
 export default function ServicesRoute() {
