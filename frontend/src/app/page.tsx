@@ -298,6 +298,68 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Demo CTA ── */}
+      <FadeUp>
+  <section className="relative overflow-hidden bg-gradient-to-r from-primary-600 via-emerald-600 to-teal-600 py-16 sm:py-20">
+    
+    {/* Soft radial glow */}
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.15),transparent_70%)]" />
+
+    <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+
+      {/* Badge */}
+      <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/90 sm:text-sm shadow-sm">
+        Interactive Demo Available
+      </div>
+
+      {/* Heading */}
+      <h2 className="mt-6 text-balance text-3xl font-extrabold tracking-tight sm:text-3xl lg:text-4xl">
+        <span className="bg-gradient-to-r from-primary-50 via-emerald-100 to-cyan-200 bg-clip-text text-transparent">
+          Explore the Full Ploxi Experience
+        </span>
+      </h2>
+
+      {/* Description */}
+      <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
+        Try the demo to explore ESG dashboards, sustainability marketplace, compliance tracking,
+        benchmarking, and more — no registration required.
+      </p>
+
+      {/* Buttons */}
+      <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+
+        {/* Primary */}
+        <Link
+          href="/demo/corporate"
+          className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-semibold text-primary-700 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+        >
+          Try Corporate Demo
+          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+        </Link>
+
+        {/* Secondary */}
+        <Link
+          href="/demo/corporate"
+          className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-semibold text-primary-700 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+        >
+          Try Cleantech Demo
+          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+        </Link>
+
+        {/* Secondary */}
+        <Link
+          href="/demo/corporate"
+          className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-semibold text-primary-700 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+        >
+          Try Climate Finance Demo
+          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+        </Link>
+
+      </div>
+    </div>
+  </section>
+</FadeUp>
+
       <Footer />
     </div>
   );

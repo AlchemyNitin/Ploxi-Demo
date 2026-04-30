@@ -1,19 +1,20 @@
 'use client';
+
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import { HeroFadeUp, FadeUp } from '@/components/ui/Motion';
 import SubpageHeader from '@/components/SubpageHeader';
 
-export default function CleantechPage() {
+export default function CleanTechDemoPage() {
   return (
     <div className="page-shell min-h-screen bg-white">
-      <SubpageHeader subtitle="Decarbonisation and Net-Zero Marketplace" />
+      <SubpageHeader subtitle="Decarbonisation and Net-Zero Marketplace" backHref="/" backLabel="← Back to Ploxi" />
 
       <section className="bg-gradient-to-br from-sky-900 via-cyan-800 to-blue-900 px-4 py-20 text-white sm:py-24 lg:py-28">
         <div className="mx-auto max-w-4xl text-center">
           <HeroFadeUp delay={0.1}>
             <div className="inline-block bg-sky-500/20 text-sky-300 text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full border border-sky-400/30 mb-6">
-              Clean Tech Marketplace
+              Clean Tech Marketplace — Demo
             </div>
           </HeroFadeUp>
           <HeroFadeUp delay={0.22}>
@@ -34,31 +35,25 @@ export default function CleantechPage() {
           <HeroFadeUp delay={0.48}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/vendor/register"
+                href="/demo/cleantech/add-listing"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-cyan-500 px-8 py-4 text-base font-semibold text-white shadow-lg hover:from-sky-600 hover:to-cyan-600 transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><line x1="19" y1="8" x2="19" y2="14" /><line x1="22" y1="11" x2="16" y2="11" /></svg>
-                Register as Vendor
+                Create Your Listing
               </Link>
               <Link
-                href="/auth/login"
+                href="/demo/cleantech/dashboard"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/30 bg-white/10 backdrop-blur-sm px-8 py-4 text-base font-semibold text-white shadow-sm hover:bg-white/20 hover:border-white/50 transition-all duration-200 hover:-translate-y-0.5"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" /><polyline points="10 17 15 12 10 7" /><line x1="15" y1="12" x2="3" y2="12" /></svg>
-                Vendor Sign In
-              </Link>
-              <Link
-                href="/demo/cleantech"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-sky-300/40 bg-sky-500/15 px-8 py-4 text-base font-semibold text-white shadow-sm hover:bg-sky-500/25 transition-all duration-200 hover:-translate-y-0.5"
-              >
-                Try Demo
+                Quick Access Dashboard
               </Link>
             </div>
           </HeroFadeUp>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Features Section — matches production */}
       <FadeUp>
         <section className="bg-white py-16 sm:py-20">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -106,12 +101,12 @@ export default function CleantechPage() {
             <h2 className="text-balance text-3xl font-bold text-gray-900 mb-4">Ready to Accelerate Your Growth?</h2>
             <p className="text-gray-500 mb-8">Join hundreds of clean tech vendors connecting with enterprise buyers on Ploxi</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/vendor/register" className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-cyan-500 px-8 py-4 text-base font-semibold text-white shadow-md hover:from-sky-600 hover:to-cyan-600 transition-all duration-200">
-                Start Your Registration Now
+              <Link href="/demo/cleantech/add-listing" className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-cyan-500 px-8 py-4 text-base font-semibold text-white shadow-md hover:from-sky-600 hover:to-cyan-600 transition-all duration-200">
+                Start Your Listing Now
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
               </Link>
-              <Link href="/auth/login" className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-gray-300 px-8 py-4 text-base font-semibold text-gray-700 hover:bg-gray-100 transition-all duration-200">
-                Already Registered? Sign In
+              <Link href="/demo/cleantech/dashboard" className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-gray-300 px-8 py-4 text-base font-semibold text-gray-700 hover:bg-gray-100 transition-all duration-200">
+                Go to Dashboard
               </Link>
             </div>
           </div>

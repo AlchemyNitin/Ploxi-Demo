@@ -29,6 +29,11 @@ export default function ClimateFinancePage() {
               Connect clean technology providers with climate-focused investors and unlock funding opportunities that drive real-world impact.
             </p>
           </HeroFadeUp>
+          <HeroFadeUp delay={0.48}>
+            <Link href="/demo/climate-finance" className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/30 bg-white/10 backdrop-blur-sm px-8 py-4 text-base font-semibold text-white shadow-sm hover:bg-white/20 hover:border-white/50 transition-all duration-200 hover:-translate-y-0.5">
+              Try Demo Dashboard
+            </Link>
+          </HeroFadeUp>
         </div>
       </section>
 

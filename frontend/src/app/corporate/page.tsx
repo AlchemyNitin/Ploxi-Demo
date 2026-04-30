@@ -26,12 +26,15 @@ export default function CorporatePage() {
               and access to a network of verified sustainability partners.
             </p>
           </HeroFadeUp>
-          <HeroFadeUp delay={0.4}>
-            <Link href="/corporate/register" className="inline-flex items-center justify-center gap-2 btn-primary text-base px-8 py-4 bg-white text-primary-700 hover:bg-gray-100">
-              Start Corporate Registration
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </Link>
-          </HeroFadeUp>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/corporate/register" className="inline-flex items-center justify-center gap-2 btn-primary text-base px-8 py-4 bg-white text-primary-700 hover:bg-gray-100">
+                Start Corporate Registration
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </Link>
+              <Link href="/demo/corporate" className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/30 bg-white/10 backdrop-blur-sm px-8 py-4 text-base font-semibold text-white shadow-sm hover:bg-white/20 hover:border-white/50 transition-all duration-200 hover:-translate-y-0.5">
+                Try Demo Dashboard
+              </Link>
+            </div>
         </div>
       </section>
 
