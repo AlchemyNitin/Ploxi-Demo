@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { Calendar, CheckCircle, ArrowLeft } from 'lucide-react';\nimport SubpageHeader from '@/components/SubpageHeader';
+import { Calendar, CheckCircle } from 'lucide-react';
+import SubpageHeader from '@/components/SubpageHeader';
 
 export default function ConsultationPage() {
   const [submitted, setSubmitted] = useState(false);

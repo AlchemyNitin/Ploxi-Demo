@@ -339,7 +339,7 @@ export default function HomePage() {
 
         {/* Secondary */}
         <Link
-          href="/demo/corporate"
+          href="/demo/cleantech"
           className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-semibold text-primary-700 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
         >
           Try Cleantech Demo
@@ -348,7 +348,7 @@ export default function HomePage() {
 
         {/* Secondary */}
         <Link
-          href="/demo/corporate"
+          href="/demo/climate-finance"
           className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-semibold text-primary-700 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
         >
           Try Climate Finance Demo
