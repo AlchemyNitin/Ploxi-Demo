@@ -27,11 +27,12 @@ export default function ConsultationPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      <SubpageHeader subtitle="Book a Consultation" backHref="/demo/climate-finance" backLabel="← Climate Finance Home" />
+    <div className="min-h-screen bg-gray-950 text-white">
+      <SubpageHeader subtitle="Book a Consultation" backHref="/demo/climate-finance" backLabel="← Climate Finance Home" variant="dark" />
 
-      <main className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8">
+      <main className="relative mx-auto max-w-2xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-80 bg-gradient-to-br from-emerald-900/30 via-gray-950 to-teal-900/20" />
+        <div className="relative z-10 bg-gray-900 border border-gray-800 rounded-2xl p-8">
           <div className="flex items-center space-x-3 mb-8">
             <div className="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center"><Calendar className="w-6 h-6 text-emerald-400" /></div>
             <div><h2 className="text-xl font-bold">Schedule Your Session</h2><p className="text-sm text-gray-400">30-minute complimentary consultation</p></div>

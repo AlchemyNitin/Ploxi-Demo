@@ -1,11 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
 import {
-  LayoutDashboard, TrendingUp, Filter, Globe, Calendar, DollarSign,
-  Leaf, BarChart3, ArrowUpRight, ArrowDownRight, Clock, ChevronDown
+  TrendingUp, Calendar, DollarSign, Leaf, BarChart3, ArrowUpRight
 } from 'lucide-react';
 import SubpageHeader from '@/components/SubpageHeader';
 
@@ -45,12 +42,13 @@ export default function ClimateFinanceDashboard() {
   const riskColor: Record<string, string> = { Low: 'bg-green-100 text-green-700', Medium: 'bg-yellow-100 text-yellow-700', High: 'bg-red-100 text-red-700' };
 
   return (
-    <div className="min-h-screen bg-white">
-      <SubpageHeader subtitle="Investor Dashboard" backHref="/demo/climate-finance" backLabel="← Climate Finance Home" />
+    <div className="min-h-screen bg-gray-950 text-white">
+      <SubpageHeader subtitle="Investor Dashboard" backHref="/demo/climate-finance" backLabel="← Climate Finance Home" variant="dark" />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="relative mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-80 bg-gradient-to-br from-emerald-900/30 via-gray-950 to-teal-900/20" />
         {/* Portfolio Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {[
             { label: 'Total Invested', value: `₹${(mockPortfolio.totalInvested / 100000).toFixed(0)}L`, icon: DollarSign, color: 'text-emerald-400', bg: 'bg-emerald-500/10', change: '+12%' },
             { label: 'Returns', value: `₹${(mockPortfolio.totalReturns / 100000).toFixed(0)}L`, icon: TrendingUp, color: 'text-teal-400', bg: 'bg-teal-500/10', change: '+15%' },
@@ -69,7 +67,7 @@ export default function ClimateFinanceDashboard() {
         </div>
 
         {/* Tabs */}
-        <div className="flex space-x-1 bg-gray-900 rounded-xl p-1 mb-8 max-w-md border border-gray-800">
+        <div className="relative z-10 flex space-x-1 bg-gray-900 rounded-xl p-1 mb-8 max-w-md border border-gray-800">
           {(['opportunities', 'portfolio', 'events'] as const).map((t) => (
             <button key={t} onClick={() => setActiveTab(t)} className={`flex-1 py-2.5 px-4 rounded-lg text-sm font-medium transition-all capitalize ${activeTab === t ? 'bg-emerald-600 text-white' : 'text-gray-400 hover:text-white'}`}>
               {t}
@@ -79,7 +77,7 @@ export default function ClimateFinanceDashboard() {
 
         {/* Opportunities */}
         {activeTab === 'opportunities' && (
-          <>
+          <div className="relative z-10">
             <div className="flex flex-wrap gap-3 mb-6">
               <select value={filterRegion} onChange={(e) => setFilterRegion(e.target.value)} className="bg-gray-900 border border-gray-700 text-gray-200 rounded-lg px-3 py-2 text-sm">
                 <option value="all">All Regions</option><option value="India">India</option><option value="EU">EU</option><option value="US">US</option><option value="UAE">UAE</option>
@@ -114,12 +112,12 @@ export default function ClimateFinanceDashboard() {
                 </div>
               ))}
             </div>
-          </>
+          </div>
         )}
 
         {/* Portfolio */}
         {activeTab === 'portfolio' && (
-          <div className="space-y-6">
+          <div className="relative z-10 space-y-6">
             <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8">
               <h3 className="text-xl font-bold mb-6">Portfolio Allocation</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -152,7 +150,7 @@ export default function ClimateFinanceDashboard() {
 
         {/* Events */}
         {activeTab === 'events' && (
-          <div className="space-y-4">
+          <div className="relative z-10 space-y-4">
             {mockEvents.map((ev) => (
               <div key={ev.id} className="bg-gray-900 border border-gray-800 rounded-2xl p-6 flex items-center justify-between hover:border-emerald-500/30 transition-all">
                 <div className="flex items-center space-x-5">

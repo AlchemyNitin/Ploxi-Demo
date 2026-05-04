@@ -74,7 +74,7 @@ export default function ClimateFinancePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="text-3xl sm:text-4xl font-bold mb-6">Ready to Make an Impact?</h3>
           <p className="text-lg text-gray-400 mb-10">Join investors who are driving the transition to a net-zero economy.</p>
-          <Link href="/demo/climate-finance/dashboard" className="inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-xl font-bold text-lg hover:from-emerald-500 hover:to-teal-500 transition-all shadow-2xl shadow-emerald-600/20">
+          <Link href="/climate-finance/investor-registration" className="inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-xl font-bold text-lg hover:from-emerald-500 hover:to-teal-500 transition-all shadow-2xl shadow-emerald-600/20">
             Start Investing <ArrowRight className="ml-3 w-5 h-5" />
           </Link>
         </div>

@@ -7,21 +7,25 @@ interface SubpageHeaderProps {
   subtitle: string;
   backHref?: string;
   backLabel?: string;
+  variant?: 'light' | 'dark';
 }
 
 export default function SubpageHeader({
   subtitle,
   backHref = '/',
   backLabel = '← Back to Ploxi',
+  variant = 'light',
 }: SubpageHeaderProps) {
+  const isDark = variant === 'dark';
+
   return (
     <HeroFadeDown>
-      <header className="border-b border-gray-100 bg-white/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+      <header className={`${isDark ? 'border-gray-800 bg-gray-950/90' : 'border-gray-100 bg-white/90'} border-b backdrop-blur`}>
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <div className="flex flex-wrap items-center justify-between gap-3 lg:min-w-[11rem]">
             <Link
               href={backHref}
-              className="text-sm text-gray-500 transition-colors hover:text-gray-700"
+              className={`${isDark ? 'text-emerald-400 hover:text-emerald-300' : 'text-gray-500 hover:text-gray-700'} text-sm transition-colors`}
             >
               {backLabel}
             </Link>
@@ -29,7 +33,7 @@ export default function SubpageHeader({
               href="https://www.ploxiconsult.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-full border border-gray-200 px-3 py-1.5 text-xs font-medium text-primary-600 transition-colors hover:bg-primary-50 lg:hidden"
+              className={`${isDark ? 'border-gray-700 text-emerald-400 hover:bg-gray-800' : 'border-gray-200 text-primary-600 hover:bg-primary-50'} inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-medium transition-colors lg:hidden`}
             >
               Website
             </a>
@@ -40,18 +44,18 @@ export default function SubpageHeader({
               alt="Ploxi Earth"
               width={38}
               height={38}
-              className="rounded-full ring-2 ring-primary-500/10"
+              className={`${isDark ? 'ring-emerald-500/20' : 'ring-primary-500/10'} rounded-full ring-2`}
             />
             <div className="min-w-0">
-              <p className="truncate text-sm font-bold leading-none text-gray-900">Ploxi Earth</p>
-              <p className="truncate text-xs text-gray-500">{subtitle}</p>
+              <p className={`${isDark ? 'text-white' : 'text-gray-900'} truncate text-sm font-bold leading-none`}>Ploxi Earth</p>
+              <p className={`${isDark ? 'text-gray-400' : 'text-gray-500'} truncate text-xs`}>{subtitle}</p>
             </div>
           </div>
           <a
             href="https://www.ploxiconsult.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden text-sm font-medium text-primary-600 transition-colors hover:text-primary-700 lg:inline-flex"
+            className={`${isDark ? 'text-emerald-400 hover:text-emerald-300' : 'text-primary-600 hover:text-primary-700'} hidden text-sm font-medium transition-colors lg:inline-flex`}
           >
             Go to Website
           </a>
