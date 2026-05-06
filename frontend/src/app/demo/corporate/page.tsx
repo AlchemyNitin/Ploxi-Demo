@@ -6,7 +6,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {
   MapPin, Building2, FileText, ArrowRight, CheckCircle, BarChart3,
-  ShieldCheck, Store, TrendingUp, FileSignature, Briefcase
 } from 'lucide-react';
 import { locations, industries, frameworks, type Location, type Industry, type Framework } from '@/lib/demo-data';
 
@@ -46,13 +45,7 @@ export default function CorporateDemoPage() {
     } catch { /* ignore */ }
   }, []);
 
-  const serviceCards = [
-    { title: 'Marketplace', desc: 'Browse verified sustainability vendors', icon: Store, href: '/demo/corporate/marketplace', color: 'text-blue-600', bg: 'bg-blue-50' },
-    { title: 'Compliance', desc: 'Track ESG compliance requirements', icon: ShieldCheck, href: '/demo/corporate/compliance', color: 'text-green-600', bg: 'bg-green-50' },
-    { title: 'Benchmarking', desc: 'Compare vendor & peer performance', icon: TrendingUp, href: '/demo/corporate/benchmarking', color: 'text-purple-600', bg: 'bg-purple-50' },
-    { title: 'RFP Builder', desc: 'Create & manage procurement RFPs', icon: FileSignature, href: '/demo/corporate/rfp', color: 'text-orange-600', bg: 'bg-orange-50' },
-    { title: 'Services & Projects', desc: 'Track sustainability projects', icon: Briefcase, href: '/demo/corporate/services', color: 'text-cyan-600', bg: 'bg-cyan-50' },
-  ];
+
 
   return (
     <div>
@@ -173,28 +166,7 @@ export default function CorporateDemoPage() {
           </div>
         </section>
 
-        {/* Service Cards */}
-        <section>
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Explore Services</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {serviceCards.map((card) => {
-              const Icon = card.icon;
-              return (
-                <Link
-                  key={card.title}
-                  href={card.href}
-                  className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all"
-                >
-                  <div className={`w-12 h-12 ${card.bg} rounded-xl flex items-center justify-center mb-4`}>
-                    <Icon className={`w-6 h-6 ${card.color}`} />
-                  </div>
-                  <h3 className="font-semibold text-gray-900 mb-1">{card.title}</h3>
-                  <p className="text-sm text-gray-500">{card.desc}</p>
-                </Link>
-              );
-            })}
-          </div>
-        </section>
+
       </main>
     </div>
   );

@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { Settings, Home, BarChart3, Building2, MapPin, FileText, Users, TrendingUp, TrendingDown, Minus } from 'lucide-react';
 import { locations, industries, frameworks, vendors } from '@/lib/demo-data';
 import SubpageHeader from '@/components/SubpageHeader';
+import DashboardNavbar from '@/components/DashboardNavbar';
+
 
 // Generate sample metrics based on industry/framework
 function generateMetrics(industryId: string, frameworkId: string) {
@@ -78,6 +80,7 @@ export default function DashboardPage({ params }: { params: { location: string; 
   return (
     <div className="page-shell min-h-screen bg-white">
       <SubpageHeader subtitle="Sustainability Dashboard" backHref="/demo/corporate" backLabel="← Corporate Home" />
+      <DashboardNavbar />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Page Title + Actions */}

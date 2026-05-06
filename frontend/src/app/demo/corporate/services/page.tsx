@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { Briefcase, Calendar, CheckCircle, Clock, AlertCircle, Pause } from 'lucide-react';
 import { demoProjects } from '@/lib/demo-data';
 import SubpageHeader from '@/components/SubpageHeader';
+import DashboardNavbar from '@/components/DashboardNavbar';
+
 
 export default function ServicesPage() {
   const [view, setView] = useState<'card' | 'gantt'>('card');
@@ -33,6 +35,7 @@ export default function ServicesPage() {
   return (
     <div className="page-shell min-h-screen bg-white">
       <SubpageHeader subtitle="Services & Projects" backHref="/demo/corporate" backLabel="← Corporate Home" />
+      <DashboardNavbar />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Controls */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">

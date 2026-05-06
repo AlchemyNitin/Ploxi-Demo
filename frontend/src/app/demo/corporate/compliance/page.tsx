@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import SubpageHeader from '@/components/SubpageHeader';
+import DashboardNavbar from '@/components/DashboardNavbar';
+
 import { ShieldCheck, FileText, Clock, Download, ChevronDown, ChevronRight } from 'lucide-react';
 import { complianceData } from '@/lib/demo-data';
 
@@ -38,6 +40,7 @@ export default function CompliancePage() {
   return (
     <div className="page-shell min-h-screen bg-white">
       <SubpageHeader subtitle="Compliance Tracker" backHref="/demo/corporate" backLabel="← Corporate Home" />
+      <DashboardNavbar />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">

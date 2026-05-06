@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { FileSignature, Plus, CheckCircle, Clock, Send, ArrowRight } from 'lucide-react';
 import { rfpVendors, submittedRFPs } from '@/lib/demo-data';
 import SubpageHeader from '@/components/SubpageHeader';
+import DashboardNavbar from '@/components/DashboardNavbar';
+
 
 export default function RFPPage() {
   const [activeTab, setActiveTab] = useState<'create' | 'submitted'>('submitted');
@@ -27,6 +29,7 @@ export default function RFPPage() {
   return (
     <div className="page-shell min-h-screen bg-white">
       <SubpageHeader subtitle="RFP Builder" backHref="/demo/corporate" backLabel="← Corporate Home" />
+      <DashboardNavbar />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex space-x-1 bg-gray-100 rounded-xl p-1 mb-8 max-w-sm">
           <button onClick={() => setActiveTab('submitted')} className={`flex-1 py-2 rounded-lg text-sm font-medium ${activeTab === 'submitted' ? 'bg-white shadow text-primary-700' : 'text-gray-600'}`}>Submitted RFPs</button>

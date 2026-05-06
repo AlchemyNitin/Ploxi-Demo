@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { Search, Filter, Store, ShoppingCart, Star, ExternalLink, MapPin } from 'lucide-react';
 import { vendors, solutions, industries, procurementItems } from '@/lib/demo-data';
 import SubpageHeader from '@/components/SubpageHeader';
+import DashboardNavbar from '@/components/DashboardNavbar';
+
 
 export default function MarketplacePage() {
   const [activeTab, setActiveTab] = useState<'vendors' | 'procurement'>('vendors');
@@ -29,6 +31,7 @@ export default function MarketplacePage() {
   return (
     <div className="page-shell min-h-screen bg-white">
       <SubpageHeader subtitle="Sustainability Marketplace" backHref="/demo/corporate" backLabel="← Corporate Home" />
+      <DashboardNavbar />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Tabs */}

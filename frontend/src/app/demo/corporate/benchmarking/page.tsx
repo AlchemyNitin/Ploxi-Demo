@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { TrendingUp, BarChart3, Search } from 'lucide-react';
 import { vendorBenchmarks, peerBenchmarks } from '@/lib/demo-data';
 import SubpageHeader from '@/components/SubpageHeader';
+import DashboardNavbar from '@/components/DashboardNavbar';
+
 
 export default function BenchmarkingPage() {
   const [activeTab, setActiveTab] = useState<'vendor' | 'peer'>('vendor');
@@ -17,6 +19,7 @@ export default function BenchmarkingPage() {
   return (
     <div className="page-shell min-h-screen bg-white">
       <SubpageHeader subtitle="Benchmarking" backHref="/demo/corporate" backLabel="← Corporate Home" />
+      <DashboardNavbar />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex space-x-1 bg-gray-100 rounded-xl p-1 mb-6 max-w-xs">
           <button onClick={() => setActiveTab('vendor')} className={`flex-1 py-2 rounded-lg text-sm font-medium ${activeTab === 'vendor' ? 'bg-white shadow-sm text-primary-700' : 'text-gray-600'}`}>Vendor</button>
