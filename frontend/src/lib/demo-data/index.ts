@@ -12,3 +12,7 @@ export { vendorBenchmarks, peerBenchmarks } from './benchmarking';
 export { demoProjects } from './projects';
 export { rfpVendors, submittedRFPs } from './rfp';
 export { procurementItems } from './procurement';
+export { sites, siteMap, getSiteById } from './sites';
+export type { SiteData, SiteKPI, SiteAlert, SiteCompliance, SiteId } from './sites';
+export { demoRoles, roleMap, DEFAULT_ROLE_ID, ALL_NAV_LABELS } from './roles';
+export type { DemoRole, NavLabel } from './roles';
