@@ -1,7 +1,10 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { X, Mail, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import { X, Mail, Loader2, CheckCircle, AlertCircle, FlaskConical } from 'lucide-react';
+
+/** True when the application is running in demo mode (NEXT_PUBLIC_DEMO_MODE=true). */
+const IS_DEMO_MODE = process.env.NEXT_PUBLIC_DEMO_MODE === 'true';
 
 type Props = {
   isOpen: boolean;
@@ -144,10 +147,29 @@ export default function OTPModal({ isOpen, onClose, email, onVerify, onResend, i
         </div>
 
         <h2 className="mb-2 text-center text-2xl font-bold text-gray-900">Verify Your Email</h2>
+
+        {/* ── DEMO MODE HINT ───────────────────────────────────────────── */}
+        {IS_DEMO_MODE && (
+          <div className="mb-4 flex items-start gap-2 rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm text-amber-800">
+            <FlaskConical className="mt-0.5 h-4 w-4 flex-shrink-0 text-amber-600" />
+            <span>
+              <strong>Demo mode</strong> — no real email is sent.
+              Enter <strong className="font-mono tracking-widest">123456</strong> to continue.
+            </span>
+          </div>
+        )}
+        {/* ─────────────────────────────────────────────────────────────── */}
+
         <p className="mb-8 text-center text-gray-600">
-          We&apos;ve sent a 6-digit code to
-          <br />
-          <span className="font-semibold text-gray-900">{email}</span>
+          {IS_DEMO_MODE
+            ? 'Email verification is simulated in this demo.'
+            : (
+              <>
+                We&apos;ve sent a 6-digit code to
+                <br />
+                <span className="font-semibold text-gray-900">{email}</span>
+              </>
+            )}
         </p>
 
         <div className="mb-6 flex justify-center gap-2">
@@ -218,7 +240,11 @@ export default function OTPModal({ isOpen, onClose, email, onVerify, onResend, i
           </p>
         </div>
 
-        <p className="mt-4 text-center text-xs text-gray-500">Check your spam folder if you don&apos;t see the email.</p>
+        {IS_DEMO_MODE ? (
+          <p className="mt-4 text-center text-xs text-amber-600">Demo mode: enter 123456 to authenticate.</p>
+        ) : (
+          <p className="mt-4 text-center text-xs text-gray-500">Check your spam folder if you don&apos;t see the email.</p>
+        )}
       </div>
     </div>
   );
